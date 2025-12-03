@@ -18,9 +18,8 @@ def load_model():
 model = load_model()
 
 # ==================== HEADER ====================
-st.title("Prediksi Risiko Serangan Jantung")
-st.markdown("### Aplikasi Machine Learning berbasis Random Forest")
-
+st.markdown("<h1 style='text-align: center;'>Prediksi Risiko Serangan Jantung</h1>", unsafe_allow_html=True)
+st.markdown("<h3 style='text-align: center;'>Aplikasi Machine Learning berbasis Random Forest</h3>", unsafe_allow_html=True)
 st.info("Silakan isi data pasien dengan benar untuk mendapatkan hasil prediksi yang akurat.")
 
 # ==================== INPUT FORM ====================
@@ -86,4 +85,5 @@ if st.button("🔍 Prediksi Sekarang", type="primary", use_container_width=True)
 
 # ==================== FOOTER ====================
 st.markdown("---")
-st.caption("Prediksi Serangan Jantung | Model Random Forest | Data Science 2025")
+st.markdown("<p style='text-align: center; color: gray; font-size: 14px;'>Prediksi Serangan Jantung | Model Random Forest | Data Science 2025</p>", unsafe_allow_html=True)
+st.markdown("<p style='text-align: center; color: gray; font-size: 14px;'>Andhika - Gilang - Najib</p>", unsafe_allow_html=True)
