@@ -13,7 +13,7 @@ st.set_page_config(
 # ==================== LOAD MODEL ====================
 @st.cache_resource
 def load_model():
-    return joblib.load("rf_heart_attack_model.pkl")
+    return joblib.load("model.pkl")
 
 model = load_model()
 
