@@ -4,7 +4,7 @@ import pandas as pd
 
 # ==================== PAGE CONFIG ====================
 st.set_page_config(
-    page_title="Prediksi Risiko Serangan Jantung",
+    page_title="Cek Risiko Serangan Jantung",
     page_icon="❤️",
     layout="centered",
     initial_sidebar_state="expanded"
@@ -18,9 +18,9 @@ def load_model():
 model = load_model()
 
 # ==================== HEADER ====================
-st.markdown("<h1 style='text-align: center;'>Prediksi Risiko Serangan Jantung</h1>", unsafe_allow_html=True)
+st.markdown("<h1 style='text-align: center;'>Cek Risiko Serangan Jantung</h1>", unsafe_allow_html=True)
 st.markdown("<h3 style='text-align: center;'>Aplikasi Machine Learning berbasis Random Forest</h3>", unsafe_allow_html=True)
-st.info("Silakan isi data pasien dengan benar untuk mendapatkan hasil prediksi yang akurat.")
+st.info("Silakan isi data pasien dengan benar untuk mendapatkan hasil yang akurat.")
 
 # ==================== INPUT FORM ====================
 col1, col2 = st.columns(2)
@@ -46,7 +46,7 @@ mapping_binary = {"Tidak": 0, "Ya": 1}
 mapping_smoking = {"Tidak pernah": 0, "Pernah (sudah berhenti)": 1, "Masih merokok": 2}
 
 # ==================== PREDICT BUTTON ====================
-if st.button("🔍 Prediksi Sekarang", type="primary", use_container_width=True):
+if st.button("🔍 Cek Sekarang", type="primary", use_container_width=True):
     # Buat DataFrame sesuai urutan feature waktu training
     input_df = pd.DataFrame({
         'previous_heart_disease': [mapping_binary[previous_heart_disease]],
@@ -65,7 +65,7 @@ if st.button("🔍 Prediksi Sekarang", type="primary", use_container_width=True)
     prob = model.predict_proba(input_df)[0]
 
     # Hasil
-    st.markdown("## Hasil Prediksi")
+    st.markdown("## Hasil Pengecekan")
 
     colA, colB, colC = st.columns([1, 1, 1])
     with colA:
@@ -86,4 +86,5 @@ if st.button("🔍 Prediksi Sekarang", type="primary", use_container_width=True)
 # ==================== FOOTER ====================
 st.markdown("---")
 st.markdown("<p style='text-align: center; color: gray; font-size: 14px;'>Prediksi Serangan Jantung | Model Random Forest | Data Science 2025</p>", unsafe_allow_html=True)
+
 st.markdown("<p style='text-align: center; color: gray; font-size: 14px;'>Andhika - Gilang - Najib</p>", unsafe_allow_html=True)
