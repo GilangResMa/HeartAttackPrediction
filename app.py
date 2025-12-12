@@ -91,6 +91,9 @@ input_data = pd.DataFrame({
     "waist_circumference": [waist_circ]
 })
 
+if hasattr(model, 'feature_names_in_'):
+    input_data = input_data[model.feature_names_in_]\
+    
 # ==================== TOMBOL PREDIKSI ====================
 if st.button("🔍 Cek Risiko Sekarang", type="primary", use_container_width=True):
     with st.spinner("Sedang menganalisis..."):
